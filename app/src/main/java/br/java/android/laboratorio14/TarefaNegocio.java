@@ -40,7 +40,7 @@ public class TarefaNegocio {
         // Por enquanto é sem o BIND da consulta, sendo que ela é recomendada quando a consulta for em loop
         // O quarto parametro é o GROUP BY, que não vamos utilizar
         // O quinto parametro é o HAVING, que não vamos utilizar
-        // O sexto parametro é o ORDER BY
+        // O sexto parametro é o ORDER BY, que não vamos utilizar
 
         Tarefa t = null;
         c.moveToFirst(); // Va para o começo do resultado
@@ -98,7 +98,7 @@ public class TarefaNegocio {
             t.setId(c.getInt(0));
             t.setTarefa(c.getString(1));
             t.setDescricao(c.getString(2));
-            t.setConcluida(c.getInt(3) > 0 ? true : false);
+            t.setConcluida(c.getInt(3) > 0);
             tarefas.add(t);
             c.moveToNext();
         }
