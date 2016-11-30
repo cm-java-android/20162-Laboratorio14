@@ -49,7 +49,7 @@ public class TarefaNegocio {
             t.setId(c.getInt(0));
             t.setTarefa(c.getString(1));
             t.setDescricao(c.getString(2));
-            t.setConcluida(c.getInt(3) > 0 ? true : false);
+            t.setConcluida(c.getInt(3) > 0);
 
             c.moveToNext();
         }
